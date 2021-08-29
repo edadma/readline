@@ -26,7 +26,7 @@ Include the following in your `build.sbt`:
 ```scala
 resolvers += Resolver.githubPackages("edadma")
 
-libraryDependencies += "io.github.edadma" %%% "readline" % "0.1.1"
+libraryDependencies += "io.github.edadma" %%% "readline" % "0.1.2"
 ```
 
 Use the following `import` in your code:

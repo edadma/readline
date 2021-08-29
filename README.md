@@ -8,7 +8,7 @@ readline
 Overview
 --------
 
-The goal of this project is to provide an easy-to-use Scala Native facade for the portion of the library that of often used to create REPL's.  An example REPL application is provided below that just echos what is typed, however the example also shows how to use *readline*'s history feature including not adding duplicates to the history. 
+The goal of this project is to provide an easy-to-use Scala Native facade for the portion of the library that is often used to create REPL's.  An example REPL application is provided below that just echos what is typed, however the example also shows how to use *readline*'s history feature including not adding duplicates to the history. 
 
 The more "programmer friendly" part of this library is found in the `io.github.edadma.readline.facade` package.  That's the only package you need to import from, as seen in the examples below.  The other package in the library is `io.github.edadma.readline.extern` which provides for interaction with the Readline C library using Scala Native interoperability elements from the so-call `unsafe` namespace.  There are no public declarations in the `io.github.edadma.readline.facade` package that use `unsafe` types in their parameter or return types, making it a pure Scala facade.  Consequently, you never have to worry about memory allocation or type conversions.
 

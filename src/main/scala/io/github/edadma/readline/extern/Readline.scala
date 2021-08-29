@@ -1,4 +1,4 @@
-package xyz.hyperreal.readline
+package io.github.edadma.readline.extern
 
 import scala.scalanative.unsafe._
 

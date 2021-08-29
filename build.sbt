@@ -21,7 +21,7 @@ scalacOptions ++= Seq(
   "-language:existentials"
 )
 
-organization := "xyz.hyperreal"
+organization := "io.github.edadma"
 
 githubOwner := "edadma"
 

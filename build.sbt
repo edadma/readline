@@ -1,8 +1,8 @@
 name := "readline"
 
-version := "0.1.2"
+version := "0.1.3"
 
-scalaVersion := "2.13.6"
+scalaVersion := "3.4.0"
 
 enablePlugins(ScalaNativePlugin)
 
@@ -10,15 +10,13 @@ nativeLinkStubs := true
 
 nativeMode := "debug"
 
-nativeLinkingOptions := Seq(s"-L/${baseDirectory.value}/native-lib")
-
 scalacOptions ++= Seq(
   "-deprecation",
   "-feature",
   "-unchecked",
   "-language:postfixOps",
   "-language:implicitConversions",
-  "-language:existentials"
+  "-language:existentials",
 )
 
 organization := "io.github.edadma"
@@ -33,17 +31,9 @@ resolvers += "Typesafe Repository" at "https://repo.typesafe.com/typesafe/releas
 
 resolvers += Resolver.githubPackages("edadma")
 
-Compile / mainClass := Some("Main")
-
 licenses := Seq("ISC" -> url("https://opensource.org/licenses/ISC"))
 
 homepage := Some(url("https://github.com/edadma/" + name.value))
-
-libraryDependencies += "org.scalatest" %%% "scalatest" % "3.2.9" % "test"
-
-libraryDependencies ++= Seq(
-  "com.github.scopt" %%% "scopt" % "4.0.1"
-)
 
 publishMavenStyle := true
 

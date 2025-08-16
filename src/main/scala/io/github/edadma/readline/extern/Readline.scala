@@ -4,7 +4,7 @@ import scala.scalanative.unsafe._
 
 @link("readline")
 @extern
-object Readline {
+object Readline:
   type _hist_entry = CString
 
   def readline(prompt: CString): CString = extern
@@ -18,4 +18,3 @@ object Readline {
 
   var history_base: CInt   = extern
   var history_length: CInt = extern
-}

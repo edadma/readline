@@ -1,14 +1,10 @@
 name := "readline"
 
-version := "0.1.3"
+version := "0.1.4"
 
-scalaVersion := "3.4.0"
+scalaVersion := "3.7.2"
 
 enablePlugins(ScalaNativePlugin)
-
-nativeLinkStubs := true
-
-nativeMode := "debug"
 
 scalacOptions ++= Seq(
   "-deprecation",
@@ -20,16 +16,6 @@ scalacOptions ++= Seq(
 )
 
 organization := "io.github.edadma"
-
-githubOwner := "edadma"
-
-githubRepository := name.value
-
-Global / onChangedBuildSource := ReloadOnSourceChanges
-
-resolvers += "Typesafe Repository" at "https://repo.typesafe.com/typesafe/releases/"
-
-resolvers += Resolver.githubPackages("edadma")
 
 licenses := Seq("ISC" -> url("https://opensource.org/licenses/ISC"))
 

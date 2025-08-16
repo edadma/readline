@@ -1,18 +1,26 @@
-import io.github.edadma.readline.facade._
+import io.github.edadma.readline.{
+  add_history,
+  append_history,
+  history_base,
+  history_get,
+  history_length,
+  read_history,
+  readline,
+  write_history,
+}
 
 import scala.annotation.tailrec
-
-import Console._
+import Console.*
 
 @main def run(): Unit =
-  val homeDir = System.getProperty("user.home")
-  val HISTORY_FILE = s"$homeDir/.my_readline_history"
+  val homeDir       = System.getProperty("user.home")
+  val HISTORY_FILE  = s"$homeDir/.my_readline_history"
   var historyExists = read_history(HISTORY_FILE)
 
   @tailrec
   def repl(): Unit =
     val prompt = s"${CYAN}type something$RESET> "
-    val line = readline(prompt)
+    val line   = readline(prompt)
 
     if line != null then
       val s = line.trim

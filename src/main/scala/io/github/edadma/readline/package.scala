@@ -1,9 +1,9 @@
-package io.github.edadma.readline.facade
+package io.github.edadma.readline
 
-import io.github.edadma.readline.extern.{Readline => rl}
+import io.github.edadma.readline.extern.Readline as rl
 
 import scala.scalanative.libc.stdlib.free
-import scala.scalanative.unsafe._
+import scala.scalanative.unsafe.*
 
 def readline(prompt: String): String =
   Zone:

@@ -1,7 +1,10 @@
 readline
 ========
 
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/edadma/readline?include_prereleases) ![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/edadma/readline) ![GitHub last commit](https://img.shields.io/github/last-commit/edadma/readline) ![GitHub](https://img.shields.io/github/license/edadma/readline)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/edadma/readline?include_prereleases)
+![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/edadma/readline)
+![GitHub last commit](https://img.shields.io/github/last-commit/edadma/readline)
+![GitHub](https://img.shields.io/github/license/edadma/readline)
 
 *readline* provides Scala Native bindings for the [GNU Readline Library](https://tiswww.cwru.edu/php/chet/readline/rltop.html).
 
@@ -10,7 +13,7 @@ Overview
 
 The goal of this project is to provide an easy-to-use Scala Native facade for the portion of the library that is often used to create REPL's.  An example REPL application is provided below that just echos what is typed, however the example also shows how to use *readline*'s history feature including not adding duplicates to the history. 
 
-The more "programmer friendly" part of this library is found in the `io.github.edadma.readline.facade` package.  That's the only package you need to import from, as seen in the example below.  The other package in the library is `io.github.edadma.readline.extern` which provides for interaction with the Readline C library using Scala Native interoperability elements from the so-call `unsafe` namespace.  There are no public declarations in the `io.github.edadma.readline.facade` package that use `unsafe` types in their parameter or return types, making it a pure Scala facade.  Consequently, you never have to worry about memory allocation or type conversions.
+The more "programmer friendly" part of this library is found in the `io.github.edadma.readline` package.  That's the only package you need to import from, as seen in the example below.  The other package in the library is `io.github.edadma.readline.extern` which provides for interaction with the Readline C library using Scala Native interoperability elements from the so-call `unsafe` namespace.  There are no public declarations in the `io.github.edadma.readline` package that use `unsafe` types in their parameter or return types, making it a pure Scala facade.  Consequently, you never have to worry about memory allocation or type conversions.
 
 Usage
 -----
@@ -21,24 +24,18 @@ To use this library, `libreadline-dev` needs to be installed:
 sudo apt install libreadline-dev
 ```
 
-Include the following in your `project/plugins.sbt`:
-
-```sbt
-addSbtPlugin("com.codecommit" % "sbt-github-packages" % "0.5.2")
-```
-
 Include the following in your `build.sbt`:
 
 ```sbt
 resolvers += Resolver.githubPackages("edadma")
 
-libraryDependencies += "io.github.edadma" %%% "readline" % "0.1.2"
+libraryDependencies += "io.github.edadma" %%% "readline" % "0.0.1"
 ```
 
 Use the following `import` in your code:
 
 ```scala
-import io.github.edadma.readline.facade._
+import io.github.edadma.readline.*
 ```
 
 Example
@@ -47,7 +44,7 @@ Example
 This example provides the skeleton for a REPL with history support, including making sure duplicates don't get added to the history.
 
 ```scala
-import io.github.edadma.readline.facade._
+import io.github.edadma.readline.*
 
 import scala.annotation.tailrec
 

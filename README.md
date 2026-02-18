@@ -1,10 +1,11 @@
 readline
 ========
 
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/edadma/readline?include_prereleases)
-![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/edadma/readline)
-![GitHub last commit](https://img.shields.io/github/last-commit/edadma/readline)
+![Maven Central](https://img.shields.io/maven-central/v/io.github.edadma/readline_native0.5_3)
+[![Last Commit](https://img.shields.io/github/last-commit/edadma/readline)](https://github.com/edadma/readline/commits)
 ![GitHub](https://img.shields.io/github/license/edadma/readline)
+![Scala Version](https://img.shields.io/badge/Scala-3.8.1-blue.svg)
+![Scala Native Version](https://img.shields.io/badge/Scala_Native-0.5.10-blue.svg)
 
 *readline* provides Scala Native bindings for the [GNU Readline Library](https://tiswww.cwru.edu/php/chet/readline/rltop.html).
 
@@ -27,9 +28,7 @@ sudo apt install libreadline-dev
 Include the following in your `build.sbt`:
 
 ```sbt
-resolvers += Resolver.githubPackages("edadma")
-
-libraryDependencies += "io.github.edadma" %%% "readline" % "0.0.1"
+libraryDependencies += "io.github.edadma" %%% "readline" % "0.0.2"
 ```
 
 Use the following `import` in your code:
